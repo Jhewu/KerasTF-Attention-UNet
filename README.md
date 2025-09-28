@@ -1,8 +1,8 @@
 # Attention Res-Unet implemented in Keras/Tensorflow (CBAM or ECA Attention)
 
-A customizable **Attention Residual U-Net** with **CBAM** or **ECA** attention—designed for easy prototyping and non-square inputs (see function docstrings)
+A customizable **Attention Residual U-Net** with **CBAM** or **ECA** attention—designed for easy prototyping and non-square inputs. 
 
-Instead of soft attention (as in Attention U-Net), this implementation uses CBAM—applied after skip connection concatenation—to jointly leverage channel and spatial attention with minimal overhead. For even greater efficiency, ECA (Efficient Channel Attention) is also supported.
+Instead of soft attention (as in Attention U-Net), this implementation uses CBAM, applied after skip connection concatenation, to jointly leverage channel and spatial attention with minimal overhead. For even greater efficiency, ECA (Efficient Channel Attention) is also supported.
 
 ## ✨ Features
 - ✅ Plug-and-play CBAM or ECA attention in skip connections or bottleneck
