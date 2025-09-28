@@ -102,12 +102,4 @@ if __name__ == "__main__":
         apply_attention_in_skip = True, 
         skip_attention = "cbam")
 
-    # dummy data
-    x = tf.random.normal((2, 200, 600, 3))
-    y = tf.cast(tf.random.uniform((2, 200, 600, 1), 0, 2, dtype=tf.int32), tf.float32)
-
-    pred = model(x)
-    print("Input:", x.shape, "Output:", pred.shape)
-    
-    model.compile(optimizer="adamW", loss="binary_crossentropy")
-    model.fit(x, y, batch_size=2, epochs=1, verbose=1)
+    model.summary()
