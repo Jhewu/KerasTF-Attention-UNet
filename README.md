@@ -1,4 +1,4 @@
-# Attention Res-Unet implemented in Keras/Tensorflow (CBAM or ECA Attention)
+# Attention Res-UNet implemented in Keras/Tensorflow (CBAM or ECA Attention)
 
 A customizable **Attention Residual U-Net** with **CBAM** or **ECA** attention—designed for easy prototyping and non-square inputs. 
 
