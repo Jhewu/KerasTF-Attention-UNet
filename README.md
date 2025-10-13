@@ -40,12 +40,12 @@ model.summary()
 
 >**Note**: If you use this code, please cite the respective papers. 
 
-### Credits: 
+### Code Credit/Reference: 
 - [Residual UNet](https://keras.io/examples/generative/ddim/)
 - [ECA Module](https://blog.paperspace.com/attention-mechanisms-in-computer-vision-ecanet/)
 - [CBAM Keras](https://github.com/kobiso/CBAM-keras/tree/master)
 
->**Note**: They deserve credit since I use their code as reference
+>**Note**: Please cite/give them credit, as their code served as reference for this repo 
      
 ## ⚠️ Limitations 
 - Requires input height/width divisible by 2^(n_blocks−1)  
