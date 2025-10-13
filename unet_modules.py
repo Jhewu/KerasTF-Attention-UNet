@@ -8,6 +8,9 @@ from keras.layers import GlobalAveragePooling2D, GlobalMaxPooling2D, Reshape, De
 def ECA(x: tf.Tensor, k_size: int = 3) -> tf.Tensor:
     """
     Efficient Channel Attention (ECA) module as a standalone function.
+
+    Credit/Reference: https://blog.paperspace.com/attention-mechanisms-in-computer-vision-ecanet/ 
+    (Reference from the PyTorch implementation and translated it into Keras/Tensorflow)
     
     Args:
         x (tf.Tensor): Input tensor with shape (batch, height, width, channels)
@@ -48,6 +51,9 @@ def CBAM(cbam_feature: tf.Tensor, ratio: int = 8):
     Woo et al., "CBAM: Convolutional Block Attention Module", ECCV 2018.  
     https://arxiv.org/abs/1807.06521  
 
+    Credit: https://github.com/kobiso/CBAM-keras/blob/master/models/attention_module.py 
+    (Original code, with slight modifications to make it work in Keras 3.x >)
+
     Args:
         cbam_feature (tf.Tensor): 
             Tensor of shape `(batch, channels, height, width)` if 
@@ -76,6 +82,9 @@ def channel_attention(input_feature: tf.Tensor, ratio: int = 8):
       2. Passing both pooled features through a shared two-layer MLP.
       3. Adding the outputs and applying a sigmoid to generate channel attention weights.
       4. Multiplying the input by these weights to recalibrate channel responses.
+
+    Credit: https://github.com/kobiso/CBAM-keras/blob/master/models/attention_module.py 
+    (Original code, with slight modifications to make it work in Keras 3.x >)
 
     Args:
         input_feature (tf.Tensor): 
@@ -130,6 +139,9 @@ def spatial_attention(input_feature: tf.Tensor):
       3. Applying a convolutional layer (kernel size 7x7) to produce a spatial attention map.
       4. Using a sigmoid activation to normalize weights, then multiplying with input.
 
+    Credit: https://github.com/kobiso/CBAM-keras/blob/master/models/attention_module.py 
+    (Original code, with slight modifications to make it work in Keras 3.x >)
+
     Args:
         input_feature (tf.Tensor): 
             Input 4D tensor (see `CBAM` for shape details).
@@ -181,6 +193,8 @@ def ResidualBlock(width: int, norm_type: str = "batch"):
     Allows better flow of gradients.  
     Mainly used in Downblock() and UpBlock()
 
+    Credit: https://keras.io/examples/generative/ddim/ (This code is strongly influenced by this Keras tutorial)
+
     Args: 
         widths (List[int]): number of output Channels in U-Net
 
@@ -213,6 +227,8 @@ def DownBlock(width: int, block_depth: int, norm_type: str):
     """
     Creates a Downsample block for U-Net (Functional API)
     A Block is a sequence of ResidualBlock, followed by a Downsampling (Conv2D with stride of 2)
+
+    Credit: https://keras.io/examples/generative/ddim/ (This code is strongly influenced by this Keras tutorial)
     
     Args: 
         widths (int]):      Output channels
@@ -244,6 +260,8 @@ def UpBlock(width: int, block_depth: int, norm_type: str, use_attention: bool, a
     Creates a Upsample block for U-Net (Functional API)
     This Block consist of a Conv2DTranspose (upsampling), followed by concatenation
     with skip, and sequence of ResidualBlock
+
+    Credit: https://keras.io/examples/generative/ddim/ (This code is strongly influenced by this Keras tutorial)
     
     Args: 
         widths (int]):      Output channels

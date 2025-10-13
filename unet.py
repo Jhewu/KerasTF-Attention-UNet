@@ -23,6 +23,7 @@ def build_UNET(image_size: Tuple[int, int],
 
     Attention U-Net original paper: https://arxiv.org/pdf/1804.03999
     ResUNet original paper: https://arxiv.org/pdf/1904.00592
+    Credit: https://keras.io/examples/generative/ddim/ (This code is strongly influenced by this Keras tutorial)
 
     Args: 
         image_size (Tuple[int, int]): Image size. Can accept non-square sizes, but must ensure size (height, width)

@@ -39,9 +39,14 @@ model.summary()
 - [ECA-Net (2020)](https://arxiv.org/abs/1910.03151?spm=a2ty_o01.29997173.0.0.1987c921B61ggU&file=1910.03151)
 
 >**Note**: If you use this code, please cite the respective papers. 
+
+### Credits: 
+- [Residual UNet](https://keras.io/examples/generative/ddim/)
+- [ECA Module](https://blog.paperspace.com/attention-mechanisms-in-computer-vision-ecanet/)
+- [CBAM Keras](https://github.com/kobiso/CBAM-keras/tree/master)
+
+>**Note**: They deserve credit since I use their code as reference
      
 ## ⚠️ Limitations 
 - Requires input height/width divisible by 2^(n_blocks−1)  
 - No built-in training loop (bring your own)
-     
-
